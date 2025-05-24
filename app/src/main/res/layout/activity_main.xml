@@ -43,7 +43,14 @@
             android:textColor="#FFFFFF" />
     </LinearLayout>
 
-
+    <Button
+        android:id="@+id/btnQR"
+        android:layout_width="336dp"
+        android:layout_height="100dp"
+        android:text="전자 출결"
+        android:textSize="18sp"
+        android:backgroundTint="#6200EE"
+        android:textColor="#FFFFFF"/>
 
 
 
