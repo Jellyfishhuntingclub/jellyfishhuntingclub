@@ -1,27 +1,47 @@
 package com.example.capst
 
+import android.graphics.Bitmap
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.google.zxing.BarcodeFormat
+import com.google.zxing.qrcode.QRCodeWriter
 
-class QrCodeActivity : AppCompatActivity() {
+class QrcodeActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_qr_code)
 
-        val userName = intent.getStringExtra("userName") ?: "홍길동"
-        val studentId = intent.getStringExtra("studentId") ?: "202312345"
+        val studentId = intent.getStringExtra("student_id")
+        val studentName = intent.getStringExtra("student_name")
 
-        val textUserName = findViewById<TextView>(R.id.textUserName)
-        val textStudentId = findViewById<TextView>(R.id.textStudentId)
-        val imageQrCode = findViewById<ImageView>(R.id.imageQrCode)
+        val textViewId = findViewById<TextView>(R.id.textViewId)
+        val textViewName = findViewById<TextView>(R.id.textViewName)
+        val imageViewQrCode = findViewById<ImageView>(R.id.imageViewQrCode)
 
-        textUserName.text = "이름: $userName"
-        textStudentId.text = "학번: $studentId"
+        textViewId.text = "학번: $studentId"
+        textViewName.text = "이름: $studentName"
 
+        studentId?.let {
+            val qrBitmap = generateQRCode(it)
+            imageViewQrCode.setImageBitmap(qrBitmap)
+        }
+    }
+
+    private fun generateQRCode(text: String): Bitmap {
+        val writer = QRCodeWriter()
+        val bitMatrix = writer.encode(text, BarcodeFormat.QR_CODE, 512, 512)
+        val bmp = Bitmap.createBitmap(512, 512, Bitmap.Config.RGB_565)
+
+        for (x in 0 until 512) {
+            for (y in 0 until 512) {
+                bmp.setPixel(x, y, if (bitMatrix[x, y]) Color.BLACK else Color.WHITE)
+            }
+        }
+
+        return bmp
     }
 }
