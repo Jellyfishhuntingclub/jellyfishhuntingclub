@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
+=======
+<<<<<<< HEAD
+>>>>>>> dd0af85421a73ccb1e84fcb647c597e3f682c419
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="jbr-21" project-jdk-type="JavaSDK">
@@ -7,4 +11,15 @@
   <component name="ProjectType">
     <option name="id" value="Android" />
   </component>
+<<<<<<< HEAD
+=======
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" default="true">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+>>>>>>> 0301be40b6985c0e55677ccaee1876f113d3acb8
+>>>>>>> dd0af85421a73ccb1e84fcb647c597e3f682c419
 </project>
