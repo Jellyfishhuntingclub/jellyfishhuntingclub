@@ -10,6 +10,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.Toast
+import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
     private var isVisible = false
@@ -47,6 +48,9 @@ class MainActivity : AppCompatActivity() {
         var selectedCategory = ""
         var selectedCredit = 0
 
+        val historyLayout = findViewById<LinearLayout>(R.id.historyLayout)
+        val historyList = mutableListOf<String>()
+
         val btn1 = findViewById<Button>(R.id.btn1)
         val btn2 = findViewById<Button>(R.id.btn2)
         val btn3 = findViewById<Button>(R.id.btn3)
@@ -55,18 +59,19 @@ class MainActivity : AppCompatActivity() {
         val btn6 = findViewById<Button>(R.id.btn6)
         val btnAdd = findViewById<Button>(R.id.btnAdd)
         val btnConfirm = findViewById<Button>(R.id.btnConfirm)
+        val btnReset = findViewById<Button>(R.id.btnReset)
 
 
         btn1.setOnClickListener {
-            selectedCategory = "major"
+            selectedCategory = "주전공"
             Toast.makeText(this, "주전공 선택됨", Toast.LENGTH_SHORT).show()
         }
         btn2.setOnClickListener {
-            selectedCategory = "doubleMajor"
+            selectedCategory = "복수전공"
             Toast.makeText(this, "복수전공 선택됨", Toast.LENGTH_SHORT).show()
         }
         btn3.setOnClickListener {
-            selectedCategory = "liberalArts"
+            selectedCategory = "교양"
             Toast.makeText(this, "교양 선택됨", Toast.LENGTH_SHORT).show()
         }
 
@@ -87,10 +92,30 @@ class MainActivity : AppCompatActivity() {
             if (selectedCategory.isEmpty() || selectedCredit == 0) {
                 Toast.makeText(this, "항목과 학점을 모두 선택해주세요!", Toast.LENGTH_SHORT).show()
             } else {
+                // 1. 텍스트 만들기
+                val addedText = "$selectedCategory - ${selectedCredit}학점"
+
+                // 2. 리스트에 추가
+                historyList.add(addedText)
+
+                // 3. 6개 초과되면 가장 오래된 항목 제거
+                if (historyList.size > 6) {
+                    historyList.removeAt(0)
+                }
+
+                // 4. UI 갱신
+                historyLayout.removeAllViews()
+                for (text in historyList.asReversed()) {
+                    val textView = TextView(this)
+                    textView.text = text
+                    textView.textSize = 16f
+                    textView.setPadding(8, 8, 8, 8)
+                    historyLayout.addView(textView)
+                }
                 when (selectedCategory) {
-                    "major" -> majorSum += selectedCredit
-                    "doubleMajor" -> doubleMajorSum += selectedCredit
-                    "liberalArts" -> liberalArtsSum += selectedCredit
+                    "주전공" -> majorSum += selectedCredit
+                    "복수전공" -> doubleMajorSum += selectedCredit
+                    "교양" -> liberalArtsSum += selectedCredit
                 }
 
                 // 추가 후 초기화
@@ -120,6 +145,16 @@ class MainActivity : AppCompatActivity() {
                 putStringArrayListExtra("resultMessages", messages)
             }
             startActivity(intent)
+        }
+        btnReset.setOnClickListener {
+
+            majorSum = 0
+            doubleMajorSum = 0
+            liberalArtsSum = 0
+
+            historyList.clear()                      // 리스트 초기화
+            historyLayout.removeAllViews()          // 화면에서도 제거
+            Toast.makeText(this, "초기화되었습니다.", Toast.LENGTH_SHORT).show()
         }
     }
 }
