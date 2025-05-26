@@ -1,0 +1,3 @@
+[submodule "jellyfishhuntingclub"]
+	path = jellyfishhuntingclub
+	url = https://github.com/Jellyfishhuntingclub/jellyfishhuntingclub.git
