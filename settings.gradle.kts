@@ -19,5 +19,11 @@ dependencyResolutionManagement {
     }
 }
 
+<<<<<<< HEAD
+rootProject.name = "Jellyfish2"
+include(":app")
+ 
+=======
 rootProject.name = "Capst"
 include(":app")
+>>>>>>> 0301be40b6985c0e55677ccaee1876f113d3acb8
