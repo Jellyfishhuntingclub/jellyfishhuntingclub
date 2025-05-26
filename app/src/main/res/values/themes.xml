@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+<<<<<<< HEAD
+    <style name="Base.Theme.Jellyfish2" parent="Theme.Material3.DayNight.NoActionBar">
+=======
+    <style name="Base.Theme.Capst" parent="Theme.Material3.DayNight.NoActionBar">
+>>>>>>> 0301be40b6985c0e55677ccaee1876f113d3acb8
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+<<<<<<< HEAD
+    <style name="Theme.Jellyfish2" parent="Base.Theme.Jellyfish2" />
+=======
+    <style name="Theme.Capst" parent="Base.Theme.Capst" />
+>>>>>>> 0301be40b6985c0e55677ccaee1876f113d3acb8
+</resources>
