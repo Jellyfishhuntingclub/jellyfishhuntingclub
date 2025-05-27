@@ -2,15 +2,7 @@
    Sample backup rules file; uncomment and customize as necessary.
    See https://developer.android.com/guide/topics/data/autobackup
    for details.
-<<<<<<< HEAD
-   Note: This file is ignored for devices older than API 31
-=======
-<<<<<<< HEAD
-   Note: This file is ignored for devices older than API 31
-=======
-   Note: This file is ignored for devices older that API 31
->>>>>>> 0301be40b6985c0e55677ccaee1876f113d3acb8
->>>>>>> dd0af85421a73ccb1e84fcb647c597e3f682c419
+
    See https://developer.android.com/about/versions/12/backup-restore
 -->
 <full-backup-content>

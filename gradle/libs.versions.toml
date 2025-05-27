@@ -1,38 +1,11 @@
 [versions]
-<<<<<<< HEAD
-agp = "8.10.0"
-kotlin = "2.0.21"
-coreKtx = "1.16.0"
-=======
-<<<<<<< HEAD
-agp = "8.10.0"
-kotlin = "2.0.21"
-coreKtx = "1.10.1"
-junit = "4.13.2"
-junitVersion = "1.1.5"
-espressoCore = "3.5.1"
-appcompat = "1.6.1"
-material = "1.10.0"
-activity = "1.8.0"
-constraintlayout = "2.1.4"
-=======
-agp = "8.6.0"
-kotlin = "1.9.0"
-coreKtx = "1.15.0"
->>>>>>> dd0af85421a73ccb1e84fcb647c597e3f682c419
+
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 appcompat = "1.7.0"
 material = "1.12.0"
-<<<<<<< HEAD
-activity = "1.10.1"
-constraintlayout = "2.2.1"
-=======
-activity = "1.9.3"
-constraintlayout = "2.2.0"
->>>>>>> 0301be40b6985c0e55677ccaee1876f113d3acb8
->>>>>>> dd0af85421a73ccb1e84fcb647c597e3f682c419
+
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
