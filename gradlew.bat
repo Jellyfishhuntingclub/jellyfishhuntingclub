@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> dd0af85421a73ccb1e84fcb647c597e3f682c419
 @rem
 @rem Copyright 2015 the original author or authors.
 @rem
@@ -88,6 +91,8 @@ exit /b 1
 if "%OS%"=="Windows_NT" endlocal
 
 :omega
+<<<<<<< HEAD
+=======
 =======
 @rem
 @rem Copyright 2015 the original author or authors.
@@ -179,3 +184,4 @@ if "%OS%"=="Windows_NT" endlocal
 
 :omega
 >>>>>>> 0301be40b6985c0e55677ccaee1876f113d3acb8
+>>>>>>> dd0af85421a73ccb1e84fcb647c597e3f682c419
